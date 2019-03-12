@@ -1,0 +1,339 @@
+/* general stuff */
+@font-face{
+	font-family: "brandon-grotesque-light";
+	src: url('brandon-grotesque-light.otf') format('truetype');
+}
+h1{
+	font-family: 'brandon-grotesque-light', arial;
+	color: #FDB32B;
+}
+h2{
+	font-family: 'brandon-grotesque-light', arial;
+	color: #FDB32B;
+}
+p{
+	font-family: 'brandon-grotesque-light', arial;
+}
+a{
+	color: #FDB32B;
+	text-decoration: underline;
+	font-family: 'brandon-grotesque-light', arial;
+}
+a:hover{
+	color: #000000;
+	text-decoration: underline;
+	font-family: 'brandon-grotesque-light', arial;
+}
+a:visited{
+	color:#000000;
+	text-decoration: underline;
+	font-family: 'brandon-grotesque-light', arial;
+}
+nav{
+	width: 100%;
+	font-family: 'brandon-grotesque-light', arial;
+	color: #FDB32B;
+	background: #FFFFFF;
+	font-size: 35px;
+	font-style: uppercase;
+	border-bottom: 5px solid #FDB32B;
+	text-align: center;
+}
+ul{
+	display: inline-block;
+	list-style-type: none;
+	justify-content: center;
+}
+li{
+	display: inline-block;
+	padding-left: 20px;
+	color: #FDB32B;
+}
+/* family drop menu */
+.dropmenu{
+	position: relative;
+	display: inline-block;
+}
+.dropmenu-content{
+	display: none;
+	position: absolute;
+	background-color: #FFFFFF;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px opx rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropmenu-content a {
+	display: block;
+	color: #FDB32B;
+	text-decoration: none;
+	padding: 12px 16px;
+}
+.dropmenu-content a:hover{
+	color: #000000;
+	text-decoration: underline;
+}
+.dropmenu:hover .dropmenu-content{
+	display: block;
+}
+.dropbutton{
+	border: none;
+}
+body{
+	margin:0;
+	padding: 0;
+	background: #898382;
+	line-height: 1.5;
+	font-family: 'brandon-grotesque-light', arial;
+	text-align: center;
+}
+
+/* split screen setup */
+#splitimage{
+	height: 500px;
+	width: 400px;
+	border: 5px solid black;
+}
+
+#container{
+	position: relative;
+	width: 100%;
+	min-height: 55vw;
+	overflow: hidden; 
+}
+.layer{
+	position: absolute;
+	width: 100vw;
+	min-height: 55vw;
+	overflow: hidden;
+}
+.layer .content-wrap{
+	position: absolute;
+	width: 100vw;
+	min-height: 55vw;
+}
+.layer .content-body{
+	width: 25%;
+	position: absolute;
+	top: 50%;
+	text-align: center;
+	transform: translateY(-50%);
+	color: white;
+}
+.layer img{
+	position: absolute;
+	width: 35%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.layer h1{
+	font-size: 2em;
+}
+.bottom{
+	background: #898382;
+	z-index: 1;
+}
+.bottom .content-body{
+	right: 5%;
+}
+.bottom h1{
+	color: #FDAB00;
+}
+.top{
+	background: #FFFFFF;
+	color: #898382;
+	z-index: 2;
+	width: 50vw;
+}
+.top .content-body{
+	left: 5%;
+	color: #898382;
+}
+.handle{
+	position: absolute;
+	height: 100%;
+	display: block;
+	background: #FDB32B;
+	width: 5px;
+	top: 0;
+	left: 50%;
+	z-index: 3;
+}
+/* since it is diagonal increase the height */
+.skewed .handle{
+	top: 50%;
+	transform: rotate(30deg) translateY(-50%);
+	height: 200%;
+	transform-origin: top;
+}
+.skewed .top{
+	transform: skew(-30deg);
+	margin-left: -1000px;
+	width: calc(50vw + 1000px);
+}
+.skewed .top .content-wrap{
+	transform: skew(30deg);
+	margin-left: 1000px;
+}
+@media(max-width: 768px){
+	body{
+		font-size: 75%;
+	}
+}
+/* main area */
+.maingrid{
+	display: grid;
+	grid-area: main;
+	grid-template-rows:  15% 45% 10%;
+	grid-template-areas: 
+	"header"
+	"main"
+	"text";
+	min-width: 100%;
+	height: 500px;
+	background: #898382;
+	text-align: center;
+	justify-content: center;
+}
+footer{
+	width: 100%;
+	height: 100px;
+	padding-top: 5px;
+	background: #FFFFFF;
+	font-family: 'brandon-grotesque-light', arial;
+	color: #FDAB00;
+	font-size: 20px;
+	font-style: uppercase;
+	border-top: 5px solid #FDAB00;
+	text-align: center;
+}
+
+/* media */
+#video{
+	padding: 0px;
+}
+.gallerygrid{
+	display: flex;
+	width: 400px;
+	height: 400px;
+	justify-content: center;
+}
+.castSlides{
+	display: flex;
+	width: 700px;
+	height: 400px;
+	border: 5px solid #000000;
+	background: #FFFFFF;
+	align-self: center;
+	font-family: 'brandon-grotesque-light';
+	text-align: center;
+	justify-content: center;
+}
+.galleryrow{
+	flex: 50%;
+	justify-content: center;
+}
+.galleryrow img{
+	border-bottom: 5px solid #000000;
+}
+#gallerytext{
+	grid-area: text;
+	position: relative;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	}
+.carousel{
+	font-family: 'brandon-grotesque-light';
+	text-align: center;
+	justify-content: center;
+}
+#slides{
+	border: 5px solid #000000;
+	align-self: center;
+	font-family: 'brandon-grotesque-light';
+	text-align: center;
+	justify-content: center;
+}
+
+/* keyframe for rolling credits */
+#credits{
+	position: absolute;
+	width: 20em;
+	height: 20em;
+	bottom: 100px;
+	left: 50%;
+	/* adjust so it is centered */
+	margin-left: -10em;
+	font-size: 350%;
+	font-weight: bold;
+	text-align: justify;
+	overflow: hidden;
+	transform-origin: 50% 100%;
+	transform: perspective(300px) rotateX(25deg);
+}
+/* fades out at the top */
+#credits:after{
+	position: absolute;
+	content: ' ';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 60%;
+	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+	pointer-events: none;
+}
+/* for the scroll */
+#creditscontent{
+	position: absolute;
+	top: 100%;
+	animation: scroll 60s linear 3s infinite;
+}
+@keyframes scroll{
+	0% { top: 100%; }
+	100% {top: -170%;}
+}
+/* modal box */
+.modalbox{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+/* modal box content */
+.modalbox-content{
+	background-color: #FFFFFF;
+	margin: 15% auto;
+	padding: 20px;
+	border: 5px solid #FDAB00;
+	width: 50%;
+	font-family: arial;
+}
+/* modal box close */
+.modalbox-close{
+	color: #898382;
+	float: right;
+	font-size: 30px;
+	font-weight: 900px;
+}
+.modalbox-close:hover, .modalbox-close:focus{
+	color: #FDAB00;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#modalbox-button{
+	border: none;
+	text-decoration: underline;
+}
+/* cat modal box */
+#catmodalbox-button{
+	border: none;
+	text-decoration: none;
+}
+
